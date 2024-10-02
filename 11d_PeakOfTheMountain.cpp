@@ -32,7 +32,8 @@ int main()
     }
 
     cout << "Peak of the mountain is: " << peakOfMountain(arr, n);
-    //This is the new line, a test for getting familiar w github;
+    // This is the new line, a test for getting familiar w github;
+    // This change was made from VS code without opening through GitHub Desktop;
 
     return 0;
 }
