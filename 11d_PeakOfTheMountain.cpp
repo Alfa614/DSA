@@ -32,6 +32,7 @@ int main()
     }
 
     cout << "Peak of the mountain is: " << peakOfMountain(arr, n);
+    //This is the new line, a test for getting familiar w github;
 
     return 0;
 }
