@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-bool isPossilbe(int arr[], int n, int m, int mid)
+bool isPossilbe(int arr[], int n, int m, int mid, bool elementgreater)
 {
     int sum = 0, painters = 1;
     for (int i = 0; i < n; i++)
@@ -15,6 +15,10 @@ bool isPossilbe(int arr[], int n, int m, int mid)
             painters++;
             if (painters > m || arr[i] > mid)
             {
+                if (arr[i] > mid)
+                {
+                    elementgreater = true;
+                }
                 return false;
             }
             sum = arr[i];
@@ -26,6 +30,7 @@ bool isPossilbe(int arr[], int n, int m, int mid)
 int paintersPartition(int arr[], int n, int m)
 {
     int Totalsum = 0;
+    bool elementgreater = false;
     for (int i = 0; i < n; i++)
     {
         Totalsum += arr[i];
@@ -35,13 +40,18 @@ int paintersPartition(int arr[], int n, int m)
 
     while (s < e)
     {
-        if (isPossilbe(arr, n, m, mid))
+
+        if (isPossilbe(arr, n, m, mid, elementgreater))
         {
             e = mid - 1;
             ans = mid;
         }
         else
         {
+            if (elementgreater)
+            {
+                return s;
+            }
             s = mid + 1;
         }
         mid = s + (e - s) / 2;
