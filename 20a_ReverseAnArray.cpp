@@ -19,6 +19,7 @@ void printArray(int arr[], int n)
         cout << " " << arr[i];
     }
 }
+
 int main()
 {
     int n, arr[50], m;
